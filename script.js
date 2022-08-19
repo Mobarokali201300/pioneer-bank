@@ -14,12 +14,15 @@ depositeBtn.addEventListener("click",function(){
       
      document.getElementById("depositeAmount").value ="";
 }) 
-//WITHDRAW
-const withdrawBtn = document.getElementById("addWithdraw").innerText;
+//WITHDRAW BUTTON HANDLER
+const withdrawBtn = document.getElementById("addWithdraw");
 withdrawBtn.addEventListener("click",function(){
      
-     const withdrawNumber = getInputNumber("addwithdraw");
-     console.log(withdrawNumber);
+     const withdrawNumber = getInputNumber("withdrawAmount"); 
+     updateSpanText("currentWithdraw",withdrawNumber);
+     updateSpanText("currentBalance",-1 * withdrawNumber);
+
+     document.getElementById("withdrawAmount").value ="";
 })
 function getInputNumber(id){
      const amount = document.getElementById(id).value;
